@@ -1,7 +1,7 @@
 # Cloudflare Workers Configuration
 # Redirect Chain Analyzer API - All 9 Endpoints
 
-name = "redirect-analyzer"
+name = "hhhghghgh"
 main = "worker-clean.js"
 compatibility_date = "2024-10-01"
 
