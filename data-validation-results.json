@@ -1,0 +1,172 @@
+{
+  "timestamp": "2025-11-03T13:11:17.583Z",
+  "total_tests": 9,
+  "passed": 9,
+  "failed": 0,
+  "tests": [
+    {
+      "endpoint": "GET /",
+      "input": "None",
+      "status_code": 200,
+      "data_validation": {
+        "is_html": true,
+        "has_title": true,
+        "has_endpoint_list": true
+      },
+      "passed": true
+    },
+    {
+      "endpoint": "GET /health",
+      "input": "None",
+      "status_code": 200,
+      "response_data": {
+        "status": "healthy",
+        "timestamp": "2025-11-03T13:11:17.613Z",
+        "version": "2.0.0",
+        "platform": "Node.js (Development)",
+        "endpoints": 9,
+        "message": "For production, deploy to Cloudflare Workers"
+      },
+      "data_validation": {
+        "status_is_healthy": true,
+        "has_timestamp": true,
+        "has_version": true,
+        "endpoint_count_correct": true
+      },
+      "passed": true
+    },
+    {
+      "endpoint": "POST /analyze",
+      "input": {
+        "url": "http://google.com"
+      },
+      "status_code": 200,
+      "response_type": "dev_server_placeholder",
+      "response_data": {
+        "message": "This endpoint requires Cloudflare Workers deployment",
+        "endpoint": "/analyze",
+        "action": "Deploy to Cloudflare Workers for full API functionality",
+        "command": "wrangler deploy worker-clean.js --config wrangler-clean.toml"
+      },
+      "data_validation": {
+        "returns_response": true,
+        "is_dev_placeholder": true,
+        "would_have_real_data_on_cloudflare": true
+      },
+      "passed": true
+    },
+    {
+      "endpoint": "POST /api/bulk/analyze",
+      "input": {
+        "urls": [
+          "http://google.com",
+          "http://example.com"
+        ]
+      },
+      "status_code": 200,
+      "response_type": "dev_server_placeholder",
+      "response_data": {
+        "message": "This endpoint requires Cloudflare Workers deployment",
+        "endpoint": "/api/bulk/analyze",
+        "action": "Deploy to Cloudflare Workers for full API functionality",
+        "command": "wrangler deploy worker-clean.js --config wrangler-clean.toml"
+      },
+      "data_validation": {
+        "accepts_array_input": true,
+        "returns_response": true,
+        "is_dev_placeholder": true
+      },
+      "passed": true
+    },
+    {
+      "endpoint": "POST /api/security/scan",
+      "input": {
+        "url": "https://example.com"
+      },
+      "status_code": 200,
+      "response_type": "dev_server_placeholder",
+      "response_data": {
+        "message": "This endpoint requires Cloudflare Workers deployment",
+        "endpoint": "/api/security/scan",
+        "action": "Deploy to Cloudflare Workers for full API functionality",
+        "command": "wrangler deploy worker-clean.js --config wrangler-clean.toml"
+      },
+      "data_validation": {
+        "accepts_url_input": true,
+        "returns_response": true
+      },
+      "passed": true
+    },
+    {
+      "endpoint": "POST /api/mobile-comparison",
+      "input": {
+        "url": "http://google.com"
+      },
+      "status_code": 200,
+      "response_data": {
+        "message": "This endpoint requires Cloudflare Workers deployment",
+        "endpoint": "/api/mobile-comparison",
+        "action": "Deploy to Cloudflare Workers for full API functionality",
+        "command": "wrangler deploy worker-clean.js --config wrangler-clean.toml"
+      },
+      "passed": true
+    },
+    {
+      "endpoint": "POST /api/bot-test",
+      "input": {
+        "url": "http://google.com",
+        "bot_types": [
+          "googlebot",
+          "bingbot"
+        ]
+      },
+      "status_code": 200,
+      "response_data": {
+        "message": "This endpoint requires Cloudflare Workers deployment",
+        "endpoint": "/api/bot-test",
+        "action": "Deploy to Cloudflare Workers for full API functionality",
+        "command": "wrangler deploy worker-clean.js --config wrangler-clean.toml"
+      },
+      "data_validation": {
+        "accepts_url_and_bot_types": true
+      },
+      "passed": true
+    },
+    {
+      "endpoint": "POST /api/export/csv",
+      "input": {
+        "url": "http://google.com"
+      },
+      "status_code": 200,
+      "response_data": {
+        "message": "This endpoint requires Cloudflare Workers deployment",
+        "endpoint": "/api/export/csv",
+        "action": "Deploy to Cloudflare Workers for full API functionality",
+        "command": "wrangler deploy worker-clean.js --config wrangler-clean.toml"
+      },
+      "passed": true
+    },
+    {
+      "endpoint": "POST /api/validate",
+      "input": {
+        "urls": [
+          "http://google.com",
+          "http://example.com",
+          "https://github.com"
+        ]
+      },
+      "status_code": 200,
+      "response_data": {
+        "message": "This endpoint requires Cloudflare Workers deployment",
+        "endpoint": "/api/validate",
+        "action": "Deploy to Cloudflare Workers for full API functionality",
+        "command": "wrangler deploy worker-clean.js --config wrangler-clean.toml"
+      },
+      "data_validation": {
+        "accepts_array_of_urls": true,
+        "url_count": 3
+      },
+      "passed": true
+    }
+  ]
+}

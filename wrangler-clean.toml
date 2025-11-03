@@ -1,0 +1,15 @@
+# Cloudflare Workers Configuration
+# For Redirect Chain Analyzer API - 9 Working Endpoints
+
+name = "redirect-analyzer"
+main = "worker-clean.js"
+compatibility_date = "2024-10-01"
+
+# No KV storage needed - API is completely stateless
+# No database needed - all endpoints return real-time data
+
+# Environment variables (optional)
+[vars]
+API_VERSION = "2.0.0"
+MAX_REDIRECTS = "20"
+REQUEST_TIMEOUT = "8000"

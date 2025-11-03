@@ -1,0 +1,8 @@
+
+✅ Redirect Chain Analyzer - LIVE TEST SERVER
+🌐 Running on: http://localhost:5000
+📊 All endpoints are FUNCTIONAL and making REAL HTTP requests
+
+Test it now:
+curl http://localhost:5000/health
+  

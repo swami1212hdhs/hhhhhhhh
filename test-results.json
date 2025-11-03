@@ -1,0 +1,131 @@
+{
+  "passed": 9,
+  "failed": 0,
+  "tests": [
+    {
+      "endpoint": "GET /",
+      "status": "PASS"
+    },
+    {
+      "endpoint": "GET /health",
+      "status": "PASS",
+      "data": {
+        "status": "healthy",
+        "timestamp": "2025-11-03T16:54:33.979Z",
+        "version": "2.0.0",
+        "platform": "Cloudflare Workers",
+        "endpoints": 9,
+        "uptime": "99.99%"
+      }
+    },
+    {
+      "endpoint": "POST /analyze",
+      "status": "PASS",
+      "sample": {
+        "input_url": "http://google.com",
+        "final_url": "http://www.google.com/",
+        "redirect_chain": [
+          {
+            "url": "http://google.com",
+            "status_code": 301,
+            "is_redirect": true,
+            "response_time": 674,
+            "domain": "google.com",
+            "headers": {
+              "cache-control": "public, max-age=2592000",
+              "content-length": "219",
+              "content-security-policy-report-only": "object-src 'none';base-uri 'self';script-src 'nonce-SR2sJ4SB3CpToNHQupNN8Q' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+              "content-type": "text/html; charset=UTF-8",
+              "date": "Mon, 03 Nov 2025 16:54:34 GMT",
+              "expires": "Wed, 03 Dec 2025 16:54:34 GMT",
+              "location": "http://www.google.com/",
+              "server": "gws",
+              "x-frame-options": "SAMEORIGIN",
+              "x-xss-protection": "0"
+            },
+            "location_header": "http://www.google.com/"
+          },
+          {
+            "url": "http://www.google.com/",
+            "status_code": 200,
+            "is_redirect": false,
+            "response_time": 167,
+            "domain": "www.google.com",
+            "headers": {
+              "cache-control": "private, max-age=0",
+              "content-encoding": "gzip",
+              "content-security-policy-report-only": "object-src 'none';base-uri 'self';script-src 'nonce-7rLOgOAcpr3L6oSOwMp6Gw' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+              "content-type": "text/html; charset=UTF-8",
+              "date": "Mon, 03 Nov 2025 16:54:34 GMT",
+              "expires": "-1",
+              "p3p": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+              "server": "gws",
+              "set-cookie": "NID=526=ZjSlYqAHAki1K8J7Nma7ucJ2AOmml45Pq6WU7VjNYT8Rr1D_8I3HFD9L_V98zj0A_LHki9tAg-1bMvs1omXx8xLKVZ7kf3r7aPHm50Dt21KTCGo1TScga-CUBhltHsoR2eyWrk9ZOCGzT9ky-HPe_nfHvlTEitbzlqP-9XB_GyvgLgKZ4RGL4uNASa-iMb-5Lpu-bd5obG76yebWtA; expires=Tue, 05-May-2026 16:54:34 GMT; path=/; domain=.google.com; HttpOnly",
+              "transfer-encoding": "chunked",
+              "x-frame-options": "SAMEORIGIN",
+              "x-xss-protection": "0"
+            }
+          }
+        ],
+        "total_redirects": 1,
+        "chain_length": 2,
+        "time_taken_per_redirect": [
+          674,
+          167
+        ],
+        "is_affiliate_url": false,
+        "is_tracking_url": false,
+        "safety_score": 80,
+        "redirect_domains": [
+          "google.com",
+          "www.google.com"
+        ],
+        "headers_analysis": {
+          "security_headers": {
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": null,
+            "strict-transport-security": null,
+            "content-security-policy": null,
+            "x-xss-protection": "0"
+          },
+          "security_score": 40,
+          "headers_present": 2,
+          "headers_missing": 3
+        },
+        "performance_metrics": {
+          "total_response_time_ms": 841,
+          "average_response_time_ms": 421,
+          "fastest_step_ms": 167,
+          "slowest_step_ms": 674,
+          "performance_grade": "A"
+        },
+        "analysis_time_ms": 842,
+        "timestamp": "2025-11-03T16:54:34.824Z"
+      }
+    },
+    {
+      "endpoint": "POST /api/bulk/analyze",
+      "status": "PASS"
+    },
+    {
+      "endpoint": "POST /api/security/scan",
+      "status": "PASS"
+    },
+    {
+      "endpoint": "POST /api/mobile-comparison",
+      "status": "PASS"
+    },
+    {
+      "endpoint": "POST /api/bot-test",
+      "status": "PASS"
+    },
+    {
+      "endpoint": "POST /api/export/csv",
+      "status": "PASS"
+    },
+    {
+      "endpoint": "POST /api/validate",
+      "status": "PASS"
+    }
+  ]
+}
